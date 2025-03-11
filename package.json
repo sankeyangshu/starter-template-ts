@@ -1,0 +1,71 @@
+{
+  "name": "pkg-name",
+  "version": "0.0.0",
+  "type": "module",
+  "packageManager": "pnpm@10.6.1",
+  "description": "_description_",
+  "author": {
+    "name": "sankeyangshu",
+    "email": "sankeyangshu@gmail.com",
+    "url": "https://github.com/sankeyangshu"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/sankeyangshu/pkg-name#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sankeyangshu/pkg-name.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sankeyangshu/pkg-name/issues"
+  },
+  "keywords": [],
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": "^18.18.0 || >=20.0.0"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "scripts": {
+    "build": "tsup",
+    "dev": "pnpm run build --watch",
+    "start": "esno src/index.ts",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "test": "vitest",
+    "typecheck": "tsc --noEmit",
+    "release": "bumpp && pnpm run publish",
+    "preinstall": "npx only-allow pnpm",
+    "prepare": "simple-git-hooks"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^19.8.0",
+    "@commitlint/config-conventional": "^19.8.0",
+    "@sankeyangshu/eslint-config": "^1.0.0",
+    "@types/node": "^22.13.10",
+    "bumpp": "^10.0.3",
+    "eslint": "^9.22.0",
+    "esno": "^4.8.0",
+    "lint-staged": "^15.4.3",
+    "simple-git-hooks": "^2.11.1",
+    "tsup": "^8.4.0",
+    "typescript": "^5.8.2",
+    "vitest": "^3.0.8"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "npx lint-staged",
+    "commit-msg": "npx --no-install commitlint --edit $1"
+  },
+  "lint-staged": {
+    "*": "eslint --fix"
+  }
+}
