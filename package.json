@@ -1,5 +1,5 @@
 {
-  "name": "pkg-name",
+  "name": "starter-template-ts",
   "version": "0.0.0",
   "type": "module",
   "packageManager": "pnpm@10.6.1",
@@ -10,13 +10,13 @@
     "url": "https://github.com/sankeyangshu"
   },
   "license": "MIT",
-  "homepage": "https://github.com/sankeyangshu/pkg-name#readme",
+  "homepage": "https://github.com/sankeyangshu/starter-template-ts#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sankeyangshu/pkg-name.git"
+    "url": "git+https://github.com/sankeyangshu/starter-template-ts.git"
   },
   "bugs": {
-    "url": "https://github.com/sankeyangshu/pkg-name/issues"
+    "url": "https://github.com/sankeyangshu/starter-template-ts/issues"
   },
   "keywords": [],
   "main": "./dist/index.js",
