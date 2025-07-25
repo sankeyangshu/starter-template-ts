@@ -2,7 +2,7 @@
   "name": "starter-template-ts",
   "version": "0.0.0",
   "type": "module",
-  "packageManager": "pnpm@10.12.1",
+  "packageManager": "pnpm@10.13.1",
   "description": "_description_",
   "author": {
     "name": "sankeyangshu",
@@ -25,15 +25,13 @@
   "files": [
     "dist"
   ],
-  "engines": {
-    "node": "^18.18.0 || >=20.0.0"
-  },
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
       "import": "./dist/index.js",
       "require": "./dist/index.cjs"
-    }
+    },
+    "./package.json": "./package.json"
   },
   "publishConfig": {
     "access": "public"
@@ -41,9 +39,9 @@
   "scripts": {
     "build": "tsdown",
     "dev": "tsdown --watch",
-    "start": "esno src/index.ts",
-    "lint": "eslint .",
-    "lint:fix": "eslint . --fix",
+    "start": "tsx src/index.ts",
+    "lint": "eslint",
+    "lint:fix": "eslint --fix",
     "test": "vitest",
     "typecheck": "tsc --noEmit",
     "release": "bumpp && pnpm publish",
@@ -54,16 +52,17 @@
   "devDependencies": {
     "@commitlint/cli": "^19.8.1",
     "@commitlint/config-conventional": "^19.8.1",
-    "@sankeyangshu/eslint-config": "^1.0.0",
-    "@types/node": "^22.15.31",
-    "bumpp": "^10.1.1",
-    "eslint": "^9.28.0",
-    "esno": "^4.8.0",
-    "lint-staged": "^16.1.0",
+    "@sankeyangshu/eslint-config": "^2.1.1",
+    "@types/node": "^24.1.0",
+    "bumpp": "^10.2.0",
+    "eslint": "^9.31.0",
+    "lint-staged": "^16.1.2",
+    "prettier": "^3.6.2",
     "simple-git-hooks": "^2.13.0",
-    "tsdown": "^0.12.7",
+    "tsdown": "^0.13.0",
+    "tsx": "^4.20.3",
     "typescript": "^5.8.3",
-    "vitest": "^3.2.3"
+    "vitest": "^3.2.4"
   },
   "simple-git-hooks": {
     "pre-commit": "npx lint-staged",
