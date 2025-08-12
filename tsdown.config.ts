@@ -6,4 +6,7 @@ export default defineConfig({
   format: ['cjs', 'esm'],
   platform: 'neutral',
   shims: true,
+  onSuccess() {
+    console.info('🙏 Build succeeded!');
+  },
 });
