@@ -66,7 +66,7 @@
   },
   "simple-git-hooks": {
     "pre-commit": "pnpm typecheck && pnpm lint-staged",
-    "commit-msg": "npx --no-install commitlint --edit $1"
+    "commit-msg": "pnpm exec commitlint --edit $1"
   },
   "lint-staged": {
     "*": "eslint --fix"
