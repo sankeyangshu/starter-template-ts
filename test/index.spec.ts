@@ -1,8 +1,8 @@
-import { describe, expect, test } from 'vitest';
-import { text } from '../dist/index.js';
+import { describe, expect, it } from 'vitest';
+import { text } from '../src';
 
 describe('should', () => {
-  test('exported', () => {
+  it('exported', () => {
     expect(text).toEqual('hello world');
   });
 });
