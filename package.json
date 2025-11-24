@@ -1,7 +1,7 @@
 {
   "name": "starter-template-ts",
-  "version": "0.0.0",
   "type": "module",
+  "version": "0.0.0",
   "packageManager": "pnpm@10.23.0",
   "description": "_description_",
   "author": {
@@ -19,12 +19,6 @@
     "url": "https://github.com/sankeyangshu/starter-template-ts/issues"
   },
   "keywords": [],
-  "main": "./dist/index.js",
-  "module": "./dist/index.js",
-  "types": "./dist/index.d.ts",
-  "files": [
-    "dist"
-  ],
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
@@ -33,6 +27,12 @@
     },
     "./package.json": "./package.json"
   },
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "publishConfig": {
     "access": "public"
   },
@@ -50,9 +50,9 @@
     "prepare": "simple-git-hooks"
   },
   "devDependencies": {
+    "@antfu/eslint-config": "^6.2.0",
     "@commitlint/cli": "^20.1.0",
     "@commitlint/config-conventional": "^20.0.0",
-    "@sankeyangshu/eslint-config": "^2.5.0",
     "@types/node": "^24.10.1",
     "bumpp": "^10.3.1",
     "eslint": "^9.39.1",
