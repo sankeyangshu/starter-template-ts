@@ -2,7 +2,7 @@
   "name": "starter-template-ts",
   "type": "module",
   "version": "0.0.0",
-  "packageManager": "pnpm@10.34.1",
+  "packageManager": "pnpm@11.6.0",
   "description": "_description_",
   "author": {
     "name": "sankeyangshu",
