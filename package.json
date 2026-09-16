@@ -1,24 +1,29 @@
 {
   "name": "starter-template-ts",
-  "type": "module",
   "version": "0.0.0",
-  "packageManager": "pnpm@10.34.5",
   "description": "_description_",
+  "keywords": [],
+  "homepage": "https://github.com/sankeyangshu/starter-template-ts#readme",
+  "bugs": {
+    "url": "https://github.com/sankeyangshu/starter-template-ts/issues"
+  },
+  "license": "MIT",
   "author": {
     "name": "sankeyangshu",
     "email": "sankeyangshu@gmail.com",
     "url": "https://github.com/sankeyangshu"
   },
-  "license": "MIT",
-  "homepage": "https://github.com/sankeyangshu/starter-template-ts#readme",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/sankeyangshu/starter-template-ts.git"
   },
-  "bugs": {
-    "url": "https://github.com/sankeyangshu/starter-template-ts/issues"
-  },
-  "keywords": [],
+  "files": [
+    "dist"
+  ],
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
@@ -27,12 +32,6 @@
     },
     "./package.json": "./package.json"
   },
-  "main": "./dist/index.js",
-  "module": "./dist/index.js",
-  "types": "./dist/index.d.ts",
-  "files": [
-    "dist"
-  ],
   "publishConfig": {
     "access": "public"
   },
@@ -40,8 +39,10 @@
     "build": "tsdown",
     "dev": "tsdown --watch",
     "start": "tsx src/index.ts",
-    "lint": "eslint",
-    "lint:fix": "eslint --fix",
+    "lint": "oxlint",
+    "lint:fix": "oxlint --fix",
+    "format": "oxfmt",
+    "format:check": "oxfmt --check",
     "test": "vitest",
     "typecheck": "tsc --noEmit",
     "release": "bumpp && pnpm publish",
@@ -50,24 +51,26 @@
     "prepare": "simple-git-hooks"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^9.1.0",
-    "@commitlint/cli": "^21.2.1",
-    "@commitlint/config-conventional": "^21.2.0",
-    "@types/node": "^25.9.5",
-    "bumpp": "^12.1.1",
-    "eslint": "^10.7.0",
-    "lint-staged": "^17.0.8",
-    "simple-git-hooks": "^2.13.1",
-    "tsdown": "^0.22.7",
-    "tsx": "^4.23.1",
-    "typescript": "^6.0.3",
+    "@commitlint/cli": "^21.2.2",
+    "@commitlint/config-conventional": "^21.2.2",
+    "@types/node": "^26.5.1",
+    "bumpp": "^12.3.0",
+    "lint-staged": "^17.5.1",
+    "oxfmt": "0.68.0",
+    "oxlint": "1.83.0",
+    "simple-git-hooks": "^2.14.0",
+    "tsdown": "^0.23.0",
+    "tsx": "^4.23.13",
+    "typescript": "^7.0.2",
     "vitest": "^5.0.0"
   },
   "simple-git-hooks": {
-    "pre-commit": "pnpm typecheck && pnpm lint-staged",
-    "commit-msg": "pnpm exec commitlint --edit $1"
+    "pre-commit": "pnpm typecheck && pnpm exec lint-staged --concurrent false",
+    "commit-msg": "pnpm exec commitlint --edit \"$1\""
   },
   "lint-staged": {
-    "*": "eslint --fix"
-  }
+    "*": "oxfmt --no-error-on-unmatched-pattern",
+    "*.{js,jsx,ts,tsx,mjs,cjs}": "pnpm run lint"
+  },
+  "packageManager": "pnpm@12.4.1"
 }
