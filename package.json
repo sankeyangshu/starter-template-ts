@@ -72,5 +72,8 @@
     "*": "oxfmt --no-error-on-unmatched-pattern",
     "*.{js,jsx,ts,tsx,mjs,cjs}": "pnpm run lint"
   },
+  "engines": {
+    "node": ">=22"
+  },
   "packageManager": "pnpm@12.4.1"
 }
