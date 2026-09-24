@@ -51,16 +51,16 @@
     "prepare": "simple-git-hooks"
   },
   "devDependencies": {
-    "@commitlint/cli": "^21.2.2",
-    "@commitlint/config-conventional": "^21.2.2",
-    "@types/node": "^26.6.1",
+    "@commitlint/cli": "^21.2.3",
+    "@commitlint/config-conventional": "^21.2.3",
+    "@types/node": "^26.6.2",
     "bumpp": "^12.3.0",
     "lint-staged": "^17.5.1",
-    "oxfmt": "0.68.0",
-    "oxlint": "1.83.0",
+    "oxfmt": "0.70.0",
+    "oxlint": "1.85.0",
     "simple-git-hooks": "^2.14.0",
     "tsdown": "^0.23.0",
-    "tsx": "^4.23.13",
+    "tsx": "^4.23.15",
     "typescript": "^7.0.2",
     "vitest": "^5.0.1"
   },
@@ -75,5 +75,5 @@
   "engines": {
     "node": ">=22"
   },
-  "packageManager": "pnpm@12.4.2"
+  "packageManager": "pnpm@12.6.0"
 }
